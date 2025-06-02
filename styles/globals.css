@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes ripple {
+  0% {
+    background-position: 50% 50%;
+    background-size: 0% 0%;
+  }
+  100% {
+    background-position: 50% 50%;
+    background-size: 200% 200%;
+  }
+}
+
+.animate-gradient-x {
+  background: radial-gradient(circle at center, #74b850, #94ce74, #74b850);
+  background-size: 200% 200%;
+  animation: ripple 10s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .hidden\.md\:flex {
+    display: none !important;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .flex-row {
+    flex-direction: column;
+  }
+
+  .md\:flex-row {
+    flex-direction: column;
+  }
+
+  .md\:mr-8 {
+    margin-right: 0 !important;
+  }
+
+  .md\:mb-0 {
+    margin-bottom: 1rem !important;
+  }
+
+  .md\:ml-4 {
+    margin-left: 0 !important;
+  }
+
+  .md\:mt-0 {
+    margin-top: 1rem !important;
+  }
+
+  .md\:mr-4 {
+    margin-right: 0 !important;
+  }
+
+  .md\:mb-4 {
+    margin-bottom: 1rem !important;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1s infinite;
+}
